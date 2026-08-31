@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday Mom! 🎉</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="cute-bg">
+    <span class="floating-item">💖</span>
+    <span class="floating-item">✨</span>
+    <span class="floating-item">🌸</span>
+    <span class="floating-item">💕</span>
+    <span class="floating-item">🌷</span>
+    <span class="floating-item">⭐</span>
+    <span class="floating-item">💖</span>
+    <span class="floating-item">✨</span>
+    <span class="floating-item">🌸</span>
+    <span class="floating-item">🎉</span>
+    <span class="floating-item">💕</span>
+    <span class="floating-item">🌷</span>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="bgmusic.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="screen1" class="screen active">
+    <button class="surprise-btn" onclick="startSequence()">Click for a Surprise 🎁</button>
+  </div>
+
+  <div id="screen2" class="screen">
+    <div id="timerDisplay">5</div>
+  </div>
+
+  <div id="screen3" class="screen">
+    <h1 class="birthday-title">Happy Birthday Mom! ✨</h1>
+    <button class="next-btn" onclick="showScreen('screen4')">Tap Here ➡️</button>
+  </div>
+
+  <div id="screen4" class="screen">
+    <div class="card-box milestone-interactive">
+      <span class="badge-tag">POP THE BALLOONS! 🎈</span>
+      
+      <div class="giant-age-badge">41</div>
+      <h2 class="sub-heading">Years of Pure Love ❤️</h2>
+      <p class="instruction-text">Tap each balloon to see its secret!</p>
+      
+      <div class="balloon-grid">
+
+        <div class="balloon-slot" onclick="popBalloonSlot(this, 'Always Radiant and Young✨')">
+          <div class="balloon">🎈</div>
+          <div class="slot-text"></div>
+        </div>
+
+        <div class="balloon-slot" onclick="popBalloonSlot(this, 'Best Mom Ever ❤️')">
+          <div class="balloon">🎈</div>
+          <div class="slot-text"></div>
+        </div>
+
+        <div class="balloon-slot" onclick="popBalloonSlot(this, '41 & Glowing 🌸')">
+          <div class="balloon">🎈</div>
+          <div class="slot-text"></div>
+        </div>
+
+      </div>
+
+      <button class="next-btn" onclick="showScreen('screen5'); playMemoryVideo();">See Memories 🎥</button>
+    </div>
+  </div>
+
+  <div id="screen5" class="screen full-screen-carousel">
+    
+    <div class="fullscreen-track">
+      <div class="fullscreen-item">
+        <img src="photo1.jpg" alt="Memory 1">
+        <p class="fullscreen-caption">Always bringing smiles! 😊</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo2.jpg" alt="Memory 2">
+        <p class="fullscreen-caption">The sweetest moments 💕</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo3.jpg" alt="Memory 3">
+        <p class="fullscreen-caption">41 years of happiness ✨</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo4.jpg" alt="Memory 4">
+        <p class="fullscreen-caption">Best Mom forever ❤️</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo5.jpg" alt="Memory 5">
+        <p class="fullscreen-caption">Pure love and warmth 🌸</p>
+      </div>
+
+      <div class="fullscreen-item">
+        <img src="photo1.jpg" alt="Memory 1">
+        <p class="fullscreen-caption">Always bringing smiles! 😊</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo2.jpg" alt="Memory 2">
+        <p class="fullscreen-caption">The sweetest moments 💕</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo3.jpg" alt="Memory 3">
+        <p class="fullscreen-caption">41 years of happiness ✨</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo4.jpg" alt="Memory 4">
+        <p class="fullscreen-caption">Best Mom forever ❤️</p>
+      </div>
+      <div class="fullscreen-item">
+        <img src="photo5.jpg" alt="Memory 5">
+        <p class="fullscreen-caption">Pure love and warmth 🌸</p>
+      </div>
+    </div>
+
+    <div class="fullscreen-overlay">
+      <button class="next-btn" onclick="showScreen('screen6')">Read My Note 💌</button>
+    </div>
+  </div>
+
+  <div id="screen6" class="screen">
+    <h2>A Secret Note 💌</h2>
+    <p class="sub-text">👇 Tap the envelope seal to open</p>
+    
+    <div id="envelopeContainer" class="envelope-wrapper" onclick="openLetter()">
+      <div class="envelope-flap"></div>
+      <div class="envelope-seal">💖</div>
+      <div class="envelope-front-body"></div>
+      
+      <div class="letter-paper">
+        <h3 class="letter-heading">Dearest Mom,</h3>
+        <p class="letter-body">
+          Thank you for making our lives so beautiful with your endless love, strength, and warmth. Wishing you the happiest 41st birthday!✨
+        </p>
+        <span class="letter-sign">With all my love </n> AAGYA❤️</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let audioCtx;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      return audioCtx;
+    }
+
+    function playBeepSound() {
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, ctx.currentTime);
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.15);
+      } catch (e) {}
+    }
+
+    function playPopSound() {
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(450, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(90, ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.1);
+      } catch(e) {}
+    }
+
+    function playCheerAndClap() {
+      try {
+        const ctx = getAudioContext();
+        const bufferSize = ctx.sampleRate * 2.5;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+
+        const noise = ctx.createBufferSource();
+        noise.buffer = buffer;
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 1200;
+        filter.Q.value = 1.0;
+
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.5);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+        noise.start();
+      } catch (e) {}
+    }
+
+    // Balloon pop with text appearing directly at balloon slot
+    function popBalloonSlot(slotElement, text) {
+      if (slotElement.classList.contains('popped')) return;
+      
+      slotElement.classList.add('popped');
+      playPopSound();
+
+      const textContainer = slotElement.querySelector('.slot-text');
+      textContainer.innerText = text;
+
+      confetti({
+        particleCount: 35,
+        spread: 60,
+        origin: { y: 0.5 }
+      });
+    }
+
+    function openLetter() {
+      const container = document.getElementById('envelopeContainer');
+      if (!container.classList.contains('open')) {
+        container.classList.add('open');
+        playPopSound();
+        confetti({
+          particleCount: 50,
+          spread: 70,
+          origin: { y: 0.7 }
+        });
+      }
+    }
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+    }
+
+    function playMemoryVideo() {
+      const video = document.getElementById('memoryVideo');
+      if (video) {
+        video.currentTime = 0;
+        video.play().catch(e => console.log("Video error:", e));
+      }
+    }
+
+    function startSequence() {
+      getAudioContext();
+      const music = document.getElementById('bgMusic');
+      if (music) music.play().catch(e => {});
+
+      showScreen('screen2');
+      let count = 5;
+      const display = document.getElementById('timerDisplay');
+      playBeepSound();
+
+      const timer = setInterval(() => {
+        count--;
+        if (count > 0) {
+          display.innerText = count;
+          playBeepSound();
+        } else {
+          clearInterval(timer);
+          showScreen('screen3');
+          playCheerAndClap();
+          confetti({
+            particleCount: 140,
+            spread: 100,
+            origin: { y: 0.5 },
+            colors: ['#ff4d6d', '#ff0054', '#ffb3c1', '#ffffff']
+          });
+        }
+      }, 1000);
+    }
+
+    function startSequence() {
+  getAudioContext();
+
+  // Play Background Music with Adjusted Volume
+  const music = document.getElementById('bgMusic');
+  if (music) {
+    music.volume = 0.3; // 👈 0.3 = 30% volume (Change between 0.0 and 1.0)
+    music.play().catch(e => console.log("Music play blocked:", e));
+  }
+
+  showScreen('screen2');
+  let count = 5;
+  const display = document.getElementById('timerDisplay');
+  playBeepSound();
+
+  const timer = setInterval(() => {
+    count--;
+    if (count > 0) {
+      display.innerText = count;
+      playBeepSound();
+    } else {
+      clearInterval(timer);
+      showScreen('screen3');
+      playCheerAndClap();
+      confetti({
+        particleCount: 140,
+        spread: 100,
+        origin: { y: 0.5 },
+        colors: ['#ff4d6d', '#ff0054', '#ffb3c1', '#ffffff']
+      });
+    }
+  }, 1000);
+}
+
+function playMemoryVideo() {
+  const video = document.getElementById('memoryVideo');
+  const music = document.getElementById('bgMusic');
+  
+  if (music) {
+    music.volume = 0.3; // Drops music volume down to 30% during video
+  }
+
+  if (video) {
+    video.currentTime = 0;
+    video.play().catch(e => console.log("Video error:", e));
+  }
+}
+
+function showScreen(screenId) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(screenId).classList.add('active');
+
+  // Trigger Horizontal Auto-Scroll on Screen 5
+  if (screenId === 'screen5') {
+    startCarouselScroll();
+  }
+}
+
+// Horizontal Auto-Scroll Engine
+let carouselInterval = null;
+
+function startCarouselScroll() {
+  const container = document.querySelector('.carousel-container');
+  if (!container || carouselInterval) return;
+
+  carouselInterval = setInterval(() => {
+    // If scrolled to the end, wrap smoothly back to start
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 5) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: 275, behavior: 'smooth' }); // Scrolls 1 photo over
+    }
+  }, 1500); // Scrolls every 3 seconds
+}
+  </script>
+</body>
+</html>
